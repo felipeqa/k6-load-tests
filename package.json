@@ -1,0 +1,27 @@
+{
+  "name": "k6-load-tests",
+  "version": "1.0.0",
+  "description": "Testes de carga utilizando K6",
+  "main": "index.js",
+  "scripts": {
+    "test": "k6 run poc.js --out json=report.json",
+    "test:parametro": "STEP_UM=$STEP_UM STEP_DOIS=$STEP_DOIS STEP_TRES=$STEP_TRES USUARIOS_STEP_UM=$USUARIOS_STEP_UM USUARIOS_STEP_DOIS=$USUARIOS_STEP_DOIS k6 run poc.js",
+    "start:mock": "json-server --watch db.json --port 3000",
+    "generate:report": "node gerar-relatorio.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/felipeqa/k6-load-tests.git"
+  },
+  "keywords": [],
+  "author": "Luis Oliveira",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/felipeqa/k6-load-tests/issues"
+  },
+  "homepage": "https://github.com/felipeqa/k6-load-tests#readme",
+  "devDependencies": {
+    "json-server": "^1.0.0-alpha.23",
+    "k6-html-reporter": "^1.0.5"
+  }
+}
